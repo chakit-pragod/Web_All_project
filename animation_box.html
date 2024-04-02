@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Box</title>
+    <style>
+        body
+        {
+            display: grid;
+            place-items: center;
+        }
+        .card
+        {
+            width: 300px;
+            height: 360px;
+            background-color: #030029;
+            position: relative;
+            border-radius: 8px;
+            /* margin: auto auto; */
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+        .card h2
+        {
+            font-size: 2rem;
+            color: #ffa3fd;
+            text-transform: uppercase;
+            text-align: center;
+            z-index: 2;
+        }
+        .card::before
+        {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 140%;
+            background-image: linear-gradient(180deg,#865dff,#e384ff);
+            animation: rotate 3s linear infinite;
+        }
+        .card::after
+        {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            background-color: #030029;
+            border-radius: inherit;
+        }
+        @keyframes rotate {
+            100% {
+                rotate: 360deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>chakit</h2>
+    </div>
+</body>
+</html>

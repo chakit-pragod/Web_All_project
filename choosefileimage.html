@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose file Image</title>
+    <style>
+        body
+        {
+            display: grid;
+            place-items: center;
+            place-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./img/choose.jpg" id="img" height="300">
+    </div>
+    <input type="file" id="input">
+    <script>
+        let img = document.getElementById('img');
+        let input = document.getElementById('input');
+
+        input.onchange = (e) => {
+            if (input.files[0])
+            img.src = URL.createObjectURL(input.files[0]);
+        }
+    </script>
+</body>
+</html>
