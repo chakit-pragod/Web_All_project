@@ -16,19 +16,39 @@
         }
 
         .container {
+            width: 100%;
+            height: 100vh;
             display: grid;
+            grid-template-columns: 50px 50px 50px 50px; 
+            grid-template-rows: auto;
+            grid-area: 
+                "sidebar header header header"
+                "sidebar main main main"
+                "sidebar main main main";
         }
 
         .sidebar {
-            background-color: ;
+            grid-area: sidebar;
+            background-color: aqua;
+        }
+
+        .header  {
+            grid-area: header;
+            background-color: bisque;
+        }
+
+        .content {
+            grid-area: main;
+            background-color: cadetblue;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="sidebar">nav</div>
-        <div class="main">main</div>
+        <div class="sidebar"></div>
+        <div class="header"></div>
+        <div class="content"></div>
     </div>
 </body>
 
