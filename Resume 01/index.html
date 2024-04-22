@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main 
+        {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            /* gap: 5px; */
+            /* padding: 5px; */
+            grid-template-areas: 
+                "side head head"
+                "side content content";
+            grid-template-rows: 15% auto;
+            grid-template-columns: 20% auto;
+            font-size: 32px;
+            color: #fff;
+        }
+
+        header
+        {
+            /* display: grid;
+            place-items: center; */
+            grid-area: head;
+            background-color: #092635;
+        }
+
+        article
+        {
+            /* display: grid;
+            place-items: center; */
+            grid-area: content;
+            background-color: #1B4242;
+        }
+
+        aside
+        {
+            /* display: grid;
+            place-items: center; */
+            grid-area: side;
+            background-color: #5C8374;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>Header <span>height 15%</span></header>
+        <article>
+            Content
+            <span>height auto</span>
+        </article>
+        <aside>Sidebar <span>height auto</span></aside>
+        <!-- <footer>Footer <span>height 15%</span></footer> -->
+    </main>
+</body>
+
+</html>
