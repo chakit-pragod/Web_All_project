@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Animation</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body
+        {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .button
+        {
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #303030;
+            background-color: #30303030;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button span
+        {
+            position: relative;
+            isolation: isolate;
+            display: block;
+            background-color: #75fbc0;
+            border: 2px solid #303030;
+            border-radius: 4px;
+            padding: 12px 24px;
+            transition: translate 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .button:hover span
+        {
+            translate: 4px -4px;
+        }
+
+        .button:active span
+        {
+            translate: none;
+        }
+
+        .button-decoration
+        {
+            position: absolute;
+            z-index: -1;
+            width: 20px;
+            opacity: 0;
+            scale: 0.5;
+            pointer-events: none;
+            transition-property: translate, scale, opacity;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .button:hover .button-decoration
+        {
+            scale: 1;
+            opacity: 1;
+        }
+
+        .button-decoration-1
+        {
+            top: 0;
+            left: 25px;
+        }
+
+        .button-decoration-2
+        {
+            bottom: 0;
+            right: 25px;
+        }
+
+        .button-decoration-3
+        {
+            width: 30px;
+            top: 0;
+            right: 75px;
+        }
+
+        .button-decoration-4
+        {
+            bottom: 0;
+            left: 75px;
+        }
+
+        .button-decoration-5
+        {
+            top: 5px;
+            right: 35px;
+        }
+
+        .button-decoration-6
+        {
+            width: 15px;
+            bottom: 0;
+            left: 45px;
+        }
+
+        .button:hover .button-decoration-1
+        {
+            translate: -5px -30px;
+        }
+
+        .button:hover .button-decoration-2
+        {
+            translate: 5px 30px;
+        }
+
+        .button:hover .button-decoration-3
+        {
+            translate: 5px 25px;
+        }
+
+        .button:hover .button-decoration-4
+        {
+            translate: -5px 35px;
+        }
+
+        .button:hover .button-decoration-5
+        {
+            translate: -5px -20px;
+        }
+
+        .button:hover .button-decoration-6
+        {
+            translate: -5px 20px;
+        }
+
+        .button:active .button-decoration
+        {
+            translate: none;
+            scale: 0.5;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">
+        <span>
+            Discover more
+            <img src="./img/star.png" alt="..." class="button-decoration button-decoration-1">
+            <img src="./img/star.png" alt="..." class="button-decoration button-decoration-2">
+            <img src="./img/star.png" alt="..." class="button-decoration button-decoration-3">
+            <img src="./img/star.png" alt="..." class="button-decoration button-decoration-4">
+            <img src="./img/star.png" alt="..." class="button-decoration button-decoration-5">
+            <img src="./img/star.png" alt="..." class="button-decoration button-decoration-6">
+        </span>
+    </button>
+</body>
+</html>
